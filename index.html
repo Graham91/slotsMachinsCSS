@@ -32,7 +32,7 @@
             background-color: blueviolet;
         }
 
-        .container {
+        .shadowcontainer {
             top: 25px;
             right: -5px;
             width: 15px;
@@ -42,7 +42,7 @@
             text-align: left;
         }
 
-        .container2 {
+        .shadowcontainer2 {
             top: 10px;
             right: -5px;
             width: 15px;
@@ -52,7 +52,7 @@
             text-align: right;
         }
 
-        .container3 {
+        .shadowcontainer3 {
             width: 15px;
             right: -5px;
             top: 110px;
@@ -62,7 +62,7 @@
             text-align: right;
         }
 
-        .container4 {
+        .shadowcontainer4 {
             width: 85px;
             position: absolute;
             overflow: hidden;
@@ -72,7 +72,7 @@
             top: 110px;
         }
 
-        .container5 {
+        .shadowcontainer5 {
             width: 15px;
             position: absolute;
             overflow: hidden;
@@ -81,6 +81,38 @@
             right: 95px;
             top: 110px;
         }
+
+        .shadowcontainer6 {
+            width: 100px;
+            position: absolute;
+            overflow: hidden;
+            height: 0px;
+            text-align: right;
+            right: 10px;
+            top: 10px;
+        }
+
+        .shadowcontainer7 {
+            width: 0px;
+            position: absolute;
+            overflow: hidden;
+            height: 100px;
+            text-align: right;
+            right: 110px;
+            top: 10px;
+        }
+
+        .shadowcontainer8 {
+            width: 0px;
+            position: absolute;
+            overflow: hidden;
+            height: 0px;
+            text-align: right;
+            right: 110px;
+            top: 10px;
+        }
+
+
 
         .box {
             width: 100%;
@@ -93,12 +125,15 @@
             opacity: .5;
         }
 
-        #img {
-            transition-duration: 5s;
-            height: 500px;
-            width: 20000px;
-            background-repeat: repeat;
-            background-image: url("https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/30/2560x1280/landscape-1500925839-golden-retriever-puppy.jpg?resize=480:*");
+
+        .img {
+            transition-duration: 4s;
+            height: 7200px;
+            width: 100px;
+            background-size: 100px 1800px;
+            background-repeat: repeat-y;
+            background-image: url("https://i.imgur.com/BBCQZ6A.png");
+
         }
 
         .triangle {
@@ -140,35 +175,52 @@
 
         <div class="imagewindow">
 
-            <div id=img></div>
+            <div class=img></div>
         </div>
         <div class=shadowsbox>
-            <div class="container2">
+            <div class="shadowcontainer2">
                 <div class="triangle forragetbox"></div>
                 <!-- <div class="forragetbox box"></div> -->
             </div>
-            <div class="container">
+            <div class="shadowcontainer">
                 <!-- <div class="triangle forragetbox"></div> -->
                 <div class="forragetbox2 box"></div>
             </div>
-            <div class="container3">
+            <div class="shadowcontainer3">
                 <div class="triangle2 forragetbox"></div>
                 <!-- <div class="forragetbox box"></div> -->
             </div>
-            <div class="container4">
+            <div class="shadowcontainer4">
                 <div class="triangle2 forragetbox"></div>
                 <!-- <div class="forragetbox box"></div> -->
             </div>
-            <div class="container5">
+            <div class="shadowcontainer5">
                 <div class="triangle3 forragetbox"></div>
+                <!-- <div class="forragetbox box"></div> -->
+            </div>
+            <div class="shadowcontainer6">
+                <div class="box forragetbox"></div>
+                <!-- <div class="forragetbox box"></div> -->
+            </div>
+            <div class="shadowcontainer7">
+                <div class="box forragetbox"></div>
+                <!-- <div class="forragetbox box"></div> -->
+            </div>
+            <div class="shadowcontainer8">
+                <div class="box forragetbox"></div>
                 <!-- <div class="forragetbox box"></div> -->
             </div>
 
         </div>
     </div>
 
+
+
     <button id=frogbutton>
         frog button
+    </button>
+    <button id=turtlebutton>
+        Turtle button
     </button>
     <!-- 
     <div class="imagewindow">
@@ -183,15 +235,39 @@
 
 
             $("#frogbutton").on("click", function () {
-                $('.container').animate({ width: '0', height: '100px', left: '-10px', top: "10px" }, 1000,);
-                $('.container2').animate({ width: '0', height: '0', left: '-10px' }, 1000,);
-                $('.container3').animate({ width: '0', height: '0', left: '-10px' }, 1000,);
-                $('.container4').animate({ width: '100px', height: '0', top: '110px', right: '10px' }, 1000,);
-                $('.container5').animate({ width: '0', height: '0', top: '110px', right: '110px' }, 1000,);
-                setTimeout(function () {
+                $('.shadowcontainer').animate({ width: '0', height: '100px', left: '-10px', top: "10px" }, 1000,);
+                $('.shadowcontainer2').animate({ width: '0', height: '0', left: '-10px' }, 1000,);
+                $('.shadowcontainer3').animate({ width: '0', height: '0', left: '-10px' }, 1000,);
+                $('.shadowcontainer4').animate({ width: '100px', height: '0', top: '110px', right: '10px' }, 1000,);
+                $('.shadowcontainer5').animate({ width: '0', height: '0', top: '110px', right: '110px' }, 1000,);
 
-                    $("#img").css("margin", "-50px 0px 0px -6900px");
+                setTimeout(function () {
+                    $('.shadowcontainer6').animate({ width: '95px', height: '5px', top: '10px', right: '10px' }, 700,);
+                    $('.shadowcontainer7').animate({ width: '5', height: '95', top: '15px', right: '105px' }, 700,);
+                    $('.shadowcontainer8').animate({ width: '5px', height: '5px', top: '10px', right: '105px' }, 700,);
+
+                    setTimeout(function () {
+                        $(".img").css("margin", "-3200px 0px 0px 0px");
+                    }, 700);
                 }, 1000);
+            });
+            $("#turtlebutton").on("click", function () {
+                $(".img").css("margin", "0px 0px 0px 0px");
+
+                setTimeout(function () {
+                    $('.shadowcontainer6').animate({ width: '100px', height: '0px', top: '10px', right: '10px' }, 700,);
+                    $('.shadowcontainer7').animate({ width: '0', height: '100', top: '10px', right: '110px' }, 700,);
+                    $('.shadowcontainer8').animate({ width: '0px', height: '0px', top: '10px', right: '110px' }, 700,);
+
+                    setTimeout(function () {
+                        $('.shadowcontainer').animate({ width: '15px', height: '85px', left: '-10px', top: "25px" }, 1000,);
+                        $('.shadowcontainer2').animate({ width: '15px', height: '15px', left: '-10px' }, 1000,);
+                        $('.shadowcontainer3').animate({ width: '15px', height: '15px', left: '-10px' }, 1000,);
+                        $('.shadowcontainer4').animate({ width: '85px', height: '15px', top: '110px', right: '10px' }, 1000,);
+                        $('.shadowcontainer5').animate({ width: '15px', height: '15px', top: '110px', right: '95px' }, 1000,);
+
+                    }, 700);
+                }, 4000);
             });
         });
 
